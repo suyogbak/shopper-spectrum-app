@@ -70,23 +70,22 @@ elif page == "📊 Clustering":
 
 # ================= 🎁 RECOMMENDATION MODULE =================
 elif page == "🎁 Recommendation":
-    st.title("🎯 Product Recommendation Module") [cite: 53]
-    st.write("Enter a product name to get 5 similar recommendations based on Collaborative Filtering:") [cite: 54]
+    st.title("🎯 Product Recommendation Module")
+    st.write("Enter a product name to get 5 similar recommendations based on Collaborative Filtering:")
 
-    # Text Input box [cite: 56]
+    # Inputs aur Button ekdum vertical line mein hone chahiye
     product_input = st.text_input("Enter Product Name", value="GREEN VINTAGE SPOT BEAKER")
 
-    if st.button("Get Recommendations"): [cite: 57]
-        # Text cleaning (spelling match karne ke liye)
+    # Dhyan se dekho: 'if' line bilkul 'product_input' ke sath vertically aligned hai
+    if st.button("Get Recommendations"):
         prod_name = product_input.strip()
         
-        if prod_name in similarity_df.index:
-            # Cosine similarity se top 5 nikalna (iloc[1:6] kyunki 0 par khud wahi product hoga)
-            recommendations = similarity_df[prod_name].sort_values(ascending=False).iloc[1:6].index
+        # Is block ke andar 4 spaces (ya 1 tab) ka gap hai
+        if prod_name in similarity_df:
+            recommendations = similarity_df[prod_name][:5]
             
-            st.write("### Recommended Products:") [cite: 58]
-            # Styled list layout (Card jaisa look dene ke liye)
+            st.write("### Recommended Products:")
             for i, item in enumerate(recommendations, 1):
-                st.info(f"**{i}. {item}**") [cite: 58]
+                st.info(f"**{i}. {item}**")
         else:
             st.error(f"Bhai, '{prod_name}' naam ka koi product data mein nahi mila. Ek baar exact naam check karo!")
