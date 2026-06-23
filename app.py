@@ -38,29 +38,29 @@ elif page == "📊 Clustering":
     st.title("🎯 Customer Segmentation Module")
     st.write("Enter the customer's RFM behavior details below:")
 
-    # Document ke hisab se 3 Number Inputs [cite: 61]
-    recency = st.number_input("Recency (days since last purchase)", min_value=0, value=30, step=1) [cite: 62]
-    frequency = st.number_input("Frequency (number of purchases)", min_value=1, value=5, step=1) [cite: 63]
-    monetary = st.number_input("Monetary (total spend)", min_value=0.0, value=500.0, step=10.0) [cite: 64]
+    # Inputs ekdum sahi line par hone chahiye
+    recency = st.number_input("Recency (days since last purchase)", min_value=0, value=30, step=1)
+    frequency = st.number_input("Frequency (number of purchases)", min_value=1, value=5, step=1)
+    monetary = st.number_input("Monetary (total spend)", min_value=0.0, value=500.0, step=10.0)
 
-    if st.button("Predict Segment"): [cite: 65]
-        # 1. Input ko array mein convert karna
+    # Dhyan se dekho: 'if' line bilkul 'recency' aur 'frequency' ki line ke sath vertically aligned honi chahiye
+    if st.button("Predict Segment"):
+        # Is block ke andar 4 spaces (ya 1 tab) ka gap hona chahiye
         user_data = np.array([[recency, frequency, monetary]])
-        
-        # 2. StandardScaler se transform karna (Zaruri step!)
         user_scaled = scaler.transform(user_data)
-        
-        # 3. K-Means se cluster predict karna
         cluster_pred = kmeans.predict(user_scaled)[0]
         
-        # 4. Cluster mapping (Aapke document wale labels) [cite: 45]
-        # Note: Aapne model mein jis cluster ko jo naam diya hai, us hisab se numbers (0,1,2,3) set kar lena
         cluster_labels = {
             0: "Occasional Shopper (Low F, Low M, older R)",
             1: "High-Value Customer (High R, High F, High M)",
             2: "Regular Customer (Medium F, Medium M)",
             3: "At-Risk Customer (High R, Low F, Low M)"
         }
+        
+        final_label = cluster_labels.get(cluster_pred, f"Cluster {cluster_pred}")
+        
+        st.subheader("Prediction Result:")
+        st.success(f"This customer belongs to: **{final_label}**")
         
         final_label = cluster_labels.get(cluster_pred, f"Cluster {cluster_pred}")
         
