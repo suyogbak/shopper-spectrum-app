@@ -52,9 +52,9 @@ elif page == "📊 Clustering":
         
         cluster_labels = {
             0: "0 Regular Customer (High F, High M, Low R)",
-            1: "1 Occassional Customer (High R, Low F, Low M)",
+            1: "1 Occassional Customer/ At risk Customer (High R, Low F, Low M)",
             2: "2 High Value Customer (High F, High M)",
-            3: "3 At-Risk Customer (High R, Low F, Low M)"
+            3: "3 Loyal Customer (High R, Low F, Low M)"
         }
         
         final_label = cluster_labels.get(cluster_pred, f"Cluster {cluster_pred}")
