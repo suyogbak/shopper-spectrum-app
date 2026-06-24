@@ -53,7 +53,7 @@ elif page == "📊 Clustering":
         cluster_labels = {
             0: "0 High Value Customer (High F, High M, Low R)",
             1: "1 At-Risk Customer (High R, Low F, Low M)",
-            2: "2 Regular Customer (Medium F, Medium M)",
+            2: "2 High Value Customer (High F, High M)",
             3: "3  At-Risk Customer (High R, Low F, Low M)"
         }
         
