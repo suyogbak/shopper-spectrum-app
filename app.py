@@ -51,7 +51,7 @@ elif page == "📊 Clustering":
         cluster_pred = kmeans.predict(user_scaled)[0]
         
         cluster_labels = {
-            0: "0 High Value Customer (High F, High M, Low R)",
+            0: "0 Regular Customer (High F, High M, Low R)",
             1: "1 At-Risk Customer (High R, Low F, Low M)",
             2: "2 High Value Customer (High F, High M)",
             3: "3  At-Risk Customer (High R, Low F, Low M)"
