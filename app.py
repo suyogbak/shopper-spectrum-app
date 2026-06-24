@@ -78,10 +78,10 @@ elif page == "📊 Clustering":
 # ================= 🎁 RECOMMENDATION MODULE =================
 elif page == "🎁 Recommendation":
     st.title("🎯 Product Recommendation Module")
-    st.write("Enter a product name to get 5 similar recommendations based on Collaborative Filtering:")
+    st.write("Enter a Stock Code to get 5 similar recommendations based on Collaborative Filtering:")
 
     # Inputs aur Button ekdum vertical line mein hone chahiye
-    product_input = st.text_input("Enter Product Name", value="GREEN VINTAGE SPOT BEAKER")
+    product_input = st.text_input("Enter Stock Code ", value="71053")
 
     # Dhyan se dekho: 'if' line bilkul 'product_input' ke sath vertically aligned hai
     if st.button("Get Recommendations"):
@@ -95,4 +95,4 @@ elif page == "🎁 Recommendation":
             for i, item in enumerate(recommendations, 1):
                 st.info(f"**{i}. {item}**")
         else:
-            st.error(f"Bhai, '{prod_name}' naam ka koi product data mein nahi mila. Ek baar exact naam check karo!")
+            st.error(f"Hello, '{prod_name}' No such product has been found in this data. Please try again")
