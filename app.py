@@ -95,4 +95,4 @@ elif page == "🎁 Recommendation":
             for i, item in enumerate(recommendations, 1):
                 st.info(f"**{i}. {item}**")
         else:
-            st.error(f"Hello, '{prod_name}' No such product has been found in this data. Please try again")
+            st.error(f"Hello, No such product having stock code '{prod_name}' has been found in this data. Please try again")
