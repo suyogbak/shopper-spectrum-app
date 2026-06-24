@@ -27,10 +27,17 @@ page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Clustering", "🎁 Recommen
 if page == "🏠 Home":
     st.title("🛒 Shopper Spectrum: Customer Segmentation & Recommendations")
     st.markdown("""
-    ### Welcome Bhai! 
-    Yeh aapka E-Commerce and Retail Analytics Dashboard hai.
-    * **Clustering Module:** Isme aap kisi bhi customer ka RFM data daal kar uska segment jaan sakte hain.
-    * **Recommendation Module:** Isme kisi product ka naam daal kar top 5 milti-julti items dhoondh sakte hain.
+   ## 🛒 Welcome to the E-Commerce Customer Analytics Dashboard
+
+This dashboard demonstrates how machine learning can be leveraged to understand customer purchasing behavior and deliver personalized product recommendations. It combines **RFM-based Customer Segmentation** with an **Item-Based Collaborative Filtering Recommendation System** to support data-driven business decisions in the e-commerce domain.
+
+### 📊 Customer Segmentation Module
+Analyze customer behavior using **Recency, Frequency, and Monetary (RFM)** metrics. Enter a customer's RFM values to identify the corresponding customer segment, enabling targeted marketing strategies, customer retention initiatives, and personalized engagement.
+
+### 🎯 Product Recommendation Module
+Discover products similar to a selected item using an **Item-Based Collaborative Filtering** recommendation engine. The system analyzes historical purchasing patterns to recommend the top five most relevant products, helping improve product discoverability, cross-selling opportunities, and customer experience.
+
+**Select a module from the sidebar to begin exploring the analytics dashboard.**
     """)
 
 # ================= 📊 CLUSTERING MODULE =================
